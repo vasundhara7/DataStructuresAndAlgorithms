@@ -8,8 +8,12 @@ def kmp(s,p):
             i+=1 
             j+=1 
         else:
-            pattern[j]=pattern[i]
-            j+=1 
+            if i>0:
+                i=pattern[i-1]
+            else:
+                j+=1
+            continue
+             
     print(pattern)
     
     i=0
@@ -31,6 +35,6 @@ def kmp(s,p):
     else:
         return False
         
-res=kmp("ABABDABACDABABCABAB","ABABCABAB")
+res=kmp("ABABDABACDABABCABAB","AAACAAAA")
 print(res)
             
