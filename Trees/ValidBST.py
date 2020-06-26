@@ -42,7 +42,7 @@ class Solution:
     def check(self,root,mini,maxi):
         if root==None:
             return 1
-        if (min!=None and root.val<=mini) or (maxi!=None and root.val>=maxi):
+        if (mini!=None and root.val<=mini) or (maxi!=None and root.val>=maxi):
             return 0
         elif (not self.check(root.left,mini,root.val) or not self.check(root.right,root.val,maxi)):
             return 0
